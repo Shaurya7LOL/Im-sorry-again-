@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Apology 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ff8eae;
+  --dark: #613d58;
+  --light: #fff0f5;
+  --purple: #c6a6ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff5f8;
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 10% 20%, #ffd5e5 0%, transparent 35%),
+    radial-gradient(circle at 90% 70%, #e7d8ff 0%, transparent 35%),
+    #fff8fb;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  bottom: -30px;
+  animation: floatUp linear forwards;
+  opacity: .65;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.tag {
+  background: white;
+  border: 1px solid #ffd4e2;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #d46b91;
+  box-shadow: 0 8px 25px #f5bfd033;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: clamp(65px, 15vw, 155px);
+  font-weight: 800;
+  letter-spacing: -7px;
+  line-height: 1;
+  background: linear-gradient(120deg, #ff729e, #d39cff, #ff9ebc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: heartbeat 2.5s infinite;
+  filter: drop-shadow(0 12px 15px #e9a8c544);
+}
+
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+
+.hero p {
+  margin-top: 30px;
+  max-width: 550px;
+  line-height: 2;
+  font-size: 15px;
+  color: #98758d;
+}
+
+.scroll {
+  margin-top: 65px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  animation: bounce 2s infinite;
+  color: #d47c9c;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(10px); }
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 6vw, 52px);
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  color: #a58b9f;
+  font-size: 14px;
+  margin-bottom: 45px;
+}
+
+/* PHOTO */
+
+.photo-card {
+  max-width: 360px;
+  margin: auto;
+  background: white;
+  padding: 15px 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 20px 60px #c88eaa33;
+  transform: rotate(-3deg);
+  transition: .5s;
+}
+
+.photo-card:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 340px;
+  background: linear-gradient(145deg, #ffd8e7, #e8d9ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder span {
+  font-size: 65px;
+}
+
+.photo-placeholder small {
+  margin-top: 10px;
+  color: #a7799a;
+}
+
+.photo-caption {
+  font-family: 'Pacifico', cursive;
+  margin-top: 20px;
+  color: #a66c91;
+}
+
+/* LETTER */
+
+.letter-section {
+  background: linear-gradient(180deg, #fff5f8, #f8efff);
+}
+
+.envelope {
+  width: 240px;
+  height: 155px;
+  background: #ffb8d0;
+  margin: 70px auto 35px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px #d98aab55;
+  transition: .4s;
+}
+
+.envelope:hover {
+  transform: translateY(-8px);
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 95px solid #ff8eae;
+  z-index: 2;
+}
+
+.envelope:after {
+  content: "💌";
+  font-size: 50px;
+  position: absolute;
+  top: 65px;
+  left: 95px;
+  z-index: 3;
+}
+
+.open-text {
+  color: #c77a9c;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.letter {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #fffdfd;
+  padding: clamp(25px, 6vw, 65px);
+  border-radius: 20px;
+  box-shadow: 0 15px 60px #d9a7c22a;
+  text-align: left;
+  line-height: 2.2;
+  font-size: 14px;
+  display: none;
+  animation: appear .8s ease;
+  white-space: pre-line;
+}
+
+.letter.show { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.letter h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+  color: #db7da2;
+}
+
+/* BUTTONS */
+
+.btn {
+  padding: 15px 30px;
+  background: linear-gradient(120deg, #ff8eae, #c6a6ff);
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 13px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #e5a5c555;
+  transition: .3s;
+  margin: 12px;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+/* LITTLE THINGS */
+
+.promises {
+  max-width: 800px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.promise {
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: #ffffffb9;
+  box-shadow: 0 10px 35px #dbaac522;
+  transition: .3s;
+}
+
+.promise:hover { transform: translateY(-8px); }
+
+.promise span { font-size: 35px; }
+
+.promise h3 {
+  margin: 15px 0 8px;
+  font-size: 16px;
+}
+
+.promise p {
+  font-size: 12px;
+  color: #a58b9f;
+  line-height: 1.8;
+}
+
+/* FINAL */
+
+.final {
+  background: linear-gradient(135deg, #ffe0eb, #eee2ff);
+  padding: 110px 20px;
+}
+
+.final h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(35px, 8vw, 65px);
+  color: #d579a0;
+}
+
+.final p {
+  max-width: 550px;
+  margin: 25px auto;
+  line-height: 2;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  color: #bb91ad;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+#surprise {
+  display: none;
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  color: #d579a0;
+  margin-top: 30px;
+  animation: appear .6s ease;
+}
+
+@media(max-width:600px) {
+  .hero h1 { letter-spacing: -3px; }
+  section { padding: 75px 18px; }
+  .photo-placeholder { height: 290px; }
+  .letter { font-size: 13px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div id="particles"></div>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="tag">A SMALL WEBSITE • A BIG APOLOGY</div>
+
+  <h1>SORRYYYYY</h1>
+
+  <p>
+    Sometimes words aren't enough, but that doesn't mean
+    I shouldn't try. So here's a little corner of the internet
+    dedicated to one thing...
+    <br><b>I'm genuinely sorry. 💗</b>
+  </p>
+
+  <div class="scroll">SCROLL A LITTLE ↓</div>
+</header>
+
+<!-- PHOTO -->
+
+<section>
+  <h2 class="section-title">A little memory ✨</h2>
+  <p class="subtitle">
+    Some moments deserve their own little space.
+  </p>
+
+  <div class="photo-card">
+    <div class="photo-placeholder">
+      <!-- ADD YOUR IMAGE URL BELOW -->
+      <img src="YOUR_IMAGE_URL_HERE"
+           alt="A special memory"
+           onerror="this.style.display='none'">
+      <span>🌷</span>
+      <small>Replace this with your favourite picture</small>
+    </div>
+    <div class="photo-caption">
+      A memory worth keeping 💕
+    </div>
+  </div>
+</section>
+
+<!-- LETTER -->
+
+<section class="letter-section">
+  <h2 class="section-title">A letter for you 💌</h2>
+  <p class="subtitle">
+    I wrote this because you deserve more than just a text saying sorry.
+  </p>
+
+  <div class="envelope" id="envelope"
+       onclick="openLetter()"></div>
+
+  <div class="open-text" id="openText">
+    TAP THE ENVELOPE TO OPEN
+  </div>
+
+  <br>
+
+  <article class="letter" id="letter">
+
+    <h2>Dear [HER NAME] 🌸</h2>
+
+    Hey,
+
+    I don't really know where to begin, but I guess the best
+    place to start is by saying that I'm genuinely sorry.
+
+    I know I messed up. And I don't want to pretend that
+    nothing happened or casually move on as if everything
+    is completely fine.
+
+    I realise that my actions might have hurt you, upset you,
+    or made you feel that I wasn't considering your feelings.
+    And honestly, that's something I should have thought
+    about before doing whatever I did.
+
+    Kabhi-kabhi main bina properly soche kuch kar deta hoon,
+    aur baad mein realise hota hai ki meri wajah se kisi ko
+    kitna bura feel hua hoga. But that's not an excuse.
+    I should have been more thoughtful.
+
+    I don't want this apology to sound like I'm just saying
+    sorry because things became uncomfortable. I'm saying
+    it because I genuinely understand that I made a mistake
+    and I don't want to repeat it.
+
+    You didn't deserve to be put in that situation.
+
+    And please understand one thing: I'm not expecting you
+    to instantly forget everything just because I've written
+    a long paragraph or made an entire website. 😭
+
+    Trust and comfort aren't things that can be demanded.
+    They are things that have to be earned through actions.
+
+    I would rather show you that I mean this apology than
+    keep repeating the same words without changing anything.
+
+    I know I cannot undo what happened, but I can learn
+    from it. I can be more careful with my words, more
+    considerate with my actions, and more respectful of
+    your feelings.
+
+    I also don't want you to feel obligated to respond
+    immediately. Take whatever time you need.
+    Your feelings matter, and I respect that.
+
+    And honestly, I miss the normal conversations,
+    the random talks, the silly moments and the comfort
+    of everything being okay.
+
+    I hope someday we can look back at this without
+    the same heaviness.
+
+    Until then, I just want you to know that I'm sorry.
+    Not a casual sorry. Not a sorry followed by another
+    excuse.
+
+    A genuine one.
+
+    Thank you for reading all of this, even if it was
+    ridiculously long. I know I could have just sent
+    a normal message, but I wanted to put some actual
+    effort into saying what I mean.
+
+    I'm sorry for messing up.
+
+    Take care of yourself, okay? 🌷
+
+    <b>With sincerity,
+    Shaurya 💗</b>
+
+  </article>
+
+  <button class="btn" onclick="openLetter()"
+          id="letterBtn">
+    Read my letter 💌
+  </button>
+</section>
+
+<!-- PROMISES -->
+
+<section>
+  <h2 class="section-title">A few things I want you to know</h2>
+  <p class="subtitle">Not just words. Things I want to work on.</p>
+
+  <div class="promises">
+
+    <div class="promise">
+      <span>🫶</span>
+      <h3>More understanding</h3>
+      <p>I'll try to understand your perspective instead of just mine.</p>
+    </div>
+
+    <div class="promise">
+      <span>🌷</span>
+      <h3>More consideration</h3>
+      <p>Your feelings deserve thought and respect.</p>
+    </div>
+
+    <div class="promise">
+      <span>✨</span>
+      <h3>Better actions</h3>
+      <p>I'll try to let my actions speak louder than my apologies.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+  <h2>I'm really, really sorry.</h2>
+
+  <p>
+    I can't change what happened, but I can take responsibility
+    for it and try to do better.
+    <br><br>
+    No pressure. No expectations.
+    Just a genuine apology from my side.
+  </p>
+
+  <button class="btn" onclick="showSurprise()">
+    One last thing... 💗
+  </button>
+
+  <div id="surprise">
+    Thank you for being here. 🌸
+    <br>
+    Take your time.
+  </div>
+</section>
+
+<footer>
+  MADE WITH SINCERITY • SHAURYA © 2026
+  <br><br>
+  A little effort, from the heart. 💌
+</footer>
+
+<script>
+
+// FLOATING PARTICLES
+
+const symbols = ["💗","🌸","✨","💕","🦋","♡","🌷"];
+
+function createParticle() {
+  const particle = document.createElement("div");
+  particle.className = "particle";
+
+  particle.innerHTML =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  particle.style.left = Math.random() * 100 + "vw";
+  particle.style.fontSize = (12 + Math.random() * 22) + "px";
+  particle.style.animationDuration = (6 + Math.random() * 8) + "s";
+
+  document.getElementById("particles").appendChild(particle);
+
+  setTimeout(() => particle.remove(), 14000);
+}
+
+setInterval(createParticle, 450);
+
+
+// OPEN LETTER
+
+function openLetter() {
+  const letter = document.getElementById("letter");
+  const text = document.getElementById("openText");
+  const envelope = document.getElementById("envelope");
+  const button = document.getElementById("letterBtn");
+
+  letter.classList.add("show");
+  text.innerHTML = "A LITTLE MESSAGE FROM ME 💗";
+  envelope.style.transform = "scale(0.9)";
+  button.style.display = "none";
+
+  setTimeout(() => {
+    letter.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 200);
+}
+
+
+// FINAL SURPRISE
+
+function showSurprise() {
+  const surprise = document.getElementById("surprise");
+
+  surprise.style.display = "block";
+
+  for(let i = 0; i < 20; i++) {
+    setTimeout(createParticle, i * 100);
+  }
+}
+
+</script>
+
+</body>
+</html>
